@@ -21,6 +21,7 @@ void moveScreen()
 //
 //void printScreen(){}
 //segundo intento
+//tercer intento
 void wait(unsigned int time)
 {
     usleep(time);

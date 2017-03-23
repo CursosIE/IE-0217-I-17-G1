@@ -18,7 +18,7 @@ void moveScreen()
 {
     cout << endl;
 }
-
+//
 //void printScreen(){}
 
 void wait(unsigned int time)

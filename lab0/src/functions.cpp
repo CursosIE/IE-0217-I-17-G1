@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <iostream>
 #include <unistd.h>
-#include "../include/functions.h"
+#include "functions.h"
 
 using namespace std;
 

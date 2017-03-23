@@ -23,5 +23,5 @@ void moveScreen()
 
 void wait(unsigned int time)
 {
-    sleep(time);
+    usleep(time);
 }

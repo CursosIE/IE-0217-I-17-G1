@@ -6,6 +6,9 @@
 
 using namespace std;
 
+static height;
+static length;
+
 void clearScreen(int height)
 {
     // Enters multiple lines to clear the screen
@@ -25,4 +28,24 @@ void moveScreen()
 void wait(unsigned int time)
 {
     usleep(time);
+}
+
+void setHeight(int lines)
+{
+	height = lines;
+}
+
+int getHeight()
+{
+	return height;
+}
+
+void setLength(int columns)
+{
+	Length = columns;
+}
+
+int getLength()
+{
+	return Length;
 }

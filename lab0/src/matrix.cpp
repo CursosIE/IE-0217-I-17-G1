@@ -13,5 +13,7 @@ int main()
 		wait(100000); //velocidad bonita
 		moveScreen();
 	}
+	setHeight(1);
+	cout << getHeight();
 	return 0;
 }

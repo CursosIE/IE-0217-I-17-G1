@@ -22,9 +22,13 @@ void moveScreen()
     cout << endl;
 }
 //
-//void printScreen(){}
 //segundo intento
 //tercer intento
+void printScreen(int line[],int size){
+	for(int i=0, i<size;++i){	
+		cout << i;
+	}
+}
 void wait(unsigned int time)
 {
     usleep(time);

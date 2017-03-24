@@ -6,8 +6,8 @@
 
 using namespace std;
 
-static height;
-static length;
+static int height;
+static int length;
 
 void clearScreen(int height)
 {
@@ -42,10 +42,10 @@ int getHeight()
 
 void setLength(int columns)
 {
-	Length = columns;
+	length = columns;
 }
 
 int getLength()
 {
-	return Length;
+	return length;
 }

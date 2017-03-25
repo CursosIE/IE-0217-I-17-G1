@@ -57,3 +57,10 @@ char randomChar()
     int randInt = 33 + (rand() % (int)((126-33) + 1 ));
     return (char)randInt;
 }
+int randomWithSign()
+{
+  //min = -9
+  //max = 9
+    int randInt = rand() % 19 + (-9);
+    return randInt;
+}

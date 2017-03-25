@@ -23,9 +23,9 @@ void moveScreen()
 }
 
 void printScreen(int line[],int size){
-	for(int i=0; i<size;++i){	
-		cout << i;
-	}
+    for(int i=0; i<size;++i){	
+	cout << i;
+    }
 }
 void wait(unsigned int time)
 {
@@ -34,20 +34,26 @@ void wait(unsigned int time)
 
 void setHeight(int lines)
 {
-	height = lines;
+    height = lines;
 }
 
 int getHeight()
 {
-	return height;
+    return height;
 }
 
 void setLength(int columns)
 {
-	length = columns;
+    length = columns;
 }
 
 int getLength()
 {
-	return length;
+    return length;
+}
+
+char randomChar()
+{
+    int randInt = 33 + (rand() % (int)((126-33) + 1 ));
+    return (char)randInt;
 }

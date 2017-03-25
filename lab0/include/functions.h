@@ -11,4 +11,5 @@ int getHeight();
 void setLength(int columns);
 int getLength();
 
-char randomChar()
+char randomChar();
+int randomWithSign();

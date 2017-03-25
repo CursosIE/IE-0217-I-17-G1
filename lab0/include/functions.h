@@ -10,3 +10,5 @@ void setHeight(int lines);
 int getHeight();
 void setLength(int columns);
 int getLength();
+
+char randomChar()

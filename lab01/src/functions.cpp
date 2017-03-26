@@ -4,83 +4,112 @@
 #include <unistd.h>
 #include <typeinfo>
 #include "functions.h"
-//para obtener informacion del la terminal
 #include <sys/ioctl.h>
 
-//#include "functions.h"
-
 using namespace std;
-
 static int height;
 static int length;
+/**
+ *   \file functions.cpp
+ *   \brief Functions to be used by the main program
+ *
+ */
 
+
+/** 
+\brief Clears the terminal screen by inserting multiple blank lines
+\params int Height of the terminal window
+*/
 void clearScreen(int height)
 {
-    // Enters multiple lines to clear the screen
     for(int i=1; i <= height; i=i + 1){
 	cout << endl;
     }
 }
 
+
+/** 
+\brief Moves the terminal screen down by inserting a single line
+*/
 void moveScreen()
 {
     cout << endl;
 }
 
-void printScreen(int line[],int size){
+
+/** 
+\brief Prints an array into the terminal window
+\params int[] line The array to be printed
+\params int size Sixe of the array to be printed
+*/
+void printScreen(int line[],int size)
+{
     for(int i=0; i<size;++i){
 	cout << i;
     }
 }
+
+
+/** 
+\brief Makes the program "wait" for mircoseconds
+\params int time Time to wait in microseconds
+*/
 void wait(unsigned int time)
 {
     usleep(time);
 }
-int randomWithSign()
+
+
+/** 
+\brief Get the number of columns on the terminal from the system
+*/
+int getTermCols()
 {
-  //min = -9
-  //max = 9
-    int randInt = rand() % 19 + (-9);
-    return randInt;
+    int columnas;
+    struct winsize w;
+
+    ioctl(0, TIOCGWINSZ, &w);
+    columnas = w.ws_col;
+
+    return columnas;
 }
-//obtiene las columnas
-int getTermCols(){
-  int columnas;
-  struct winsize w;
-  ioctl(0, TIOCGWINSZ, &w);
-  columnas = w.ws_col;
-  return columnas;
-}
-//Obtiene las filas
+
+
+/** 
+\brief Get the number of rows on the terminal from the system
+*/
 int getTermRows(){
-  int rows;
-  struct winsize w;
-  ioctl(0, TIOCGWINSZ, &w);
-  rows = w.ws_row;
-  return rows;
+    int rows;
+    struct winsize w;
+
+    ioctl(0, TIOCGWINSZ, &w);
+    rows = w.ws_row;
+
+    return rows;
 }
-//retorna un random entre esos dos argumentos
+
+
+/** 
+\brief Gets a random integer on a range
+\params int low lower limit of the range
+\params int high Upper limit of the range
+*/
 int randInt (int low, int high)
 {
-// we get a random number, get it to be between 0 and the difference
-// between high and low, then add the lowest possible value
-  return rand() % ( high - low ) + low;
+    return rand() % ( high - low ) + low;
 }
-//Si el random que se generó es igual la columna entonces este se hace un char
-//la siguiente interaccion
+
+
+/** 
+\brief Decides the number of lines on which there is a character string in that column
+*/
 int decideChar(int * memoria, int columnass, int filas){
     for (int i = 0; i < columnass; i++) {
-      if (randInt(0, columnass) == i && memoria[i]==0) {
-        //si se complio la condicion entonces decide la cantidad de lineas en las que va a haber una
-        //hilera de caracteres en esa columna
-        memoria[i]=randInt(5, filas);
-        //cout << memoria[i] << i << endl;
+	if (randInt(0, columnass) == i && memoria[i] ==0) {
+	    memoria[i]=randInt(5, filas);
 
-      }
+	}
     }
+
     return 0;
 }
-//int main(int argc, char const *argv[]) {
-//  cout << getTermCols() << " me cago en la puta" << endl;
-//  return 0;
-//}

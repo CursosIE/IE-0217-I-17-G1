@@ -1,0 +1,151 @@
+\hypertarget{functions_8cpp}{}\section{src/functions.cpp File Reference}
+\label{functions_8cpp}\index{src/functions.\+cpp@{src/functions.\+cpp}}
+
+
+Functions to be used by the main program.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$unistd.\+h$>$}\\*
+{\ttfamily \#include $<$typeinfo$>$}\\*
+{\ttfamily \#include \char`\"{}functions.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$sys/ioctl.\+h$>$}\\*
+Include dependency graph for functions.\+cpp\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{functions_8cpp_a468976247bcb6ad0a54cbdc2b36c8aa9}{clear\+Screen} (int \hyperlink{functions_8cpp_ad12fc34ce789bce6c8a05d8a17138534}{height})
+\begin{DoxyCompactList}\small\item\em Clears the terminal screen by inserting multiple blank lines  int Height of the terminal window. \end{DoxyCompactList}\item 
+void \hyperlink{functions_8cpp_a4eecf11de94dce51fe8a38e03b894964}{move\+Screen} ()
+\begin{DoxyCompactList}\small\item\em Moves the terminal screen down by inserting a single line. \end{DoxyCompactList}\item 
+void \hyperlink{functions_8cpp_a386e08ffd1dd1a439a7bfda4e1991b71}{print\+Screen} (int line\mbox{[}$\,$\mbox{]}, int size)
+\begin{DoxyCompactList}\small\item\em Prints an array into the terminal window  int\mbox{[}\mbox{]} line The array to be printed  int size Sixe of the array to be printed. \end{DoxyCompactList}\item 
+void \hyperlink{functions_8cpp_ad289c3720fc10f3053b657f677d75a2d}{wait} (unsigned int time)
+\begin{DoxyCompactList}\small\item\em Makes the program \char`\"{}wait\char`\"{} for mircoseconds  int time Time to wait in microseconds. \end{DoxyCompactList}\item 
+int \hyperlink{functions_8cpp_a6ce1d61c6d95f73d3b2fc7ce5a978e30}{get\+Term\+Cols} ()
+\begin{DoxyCompactList}\small\item\em Get the number of columns on the terminal from the system. \end{DoxyCompactList}\item 
+int \hyperlink{functions_8cpp_aaecafc32222150703f8ad603ae1a2fb9}{get\+Term\+Rows} ()
+\begin{DoxyCompactList}\small\item\em Get the number of rows on the terminal from the system. \end{DoxyCompactList}\item 
+int \hyperlink{functions_8cpp_a19a21cc612f2ddca8fe94b0cfd154cfd}{rand\+Int} (int low, int high)
+\begin{DoxyCompactList}\small\item\em Gets a random integer on a range  int low lower limit of the range  int high Upper limit of the range. \end{DoxyCompactList}\item 
+int \hyperlink{functions_8cpp_a5ab57402418f37d00e251f8da96fec5a}{decide\+Char} (int $\ast$memoria, int columnass, int filas)
+\begin{DoxyCompactList}\small\item\em Decides the number of lines on which there is a character string in that column. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static int \hyperlink{functions_8cpp_ad12fc34ce789bce6c8a05d8a17138534}{height}
+\item 
+static int \hyperlink{functions_8cpp_a9f59b34b1f25fe00023291b678246bcc}{length}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Functions to be used by the main program. 
+
+
+
+\subsection{Function Documentation}
+\index{functions.\+cpp@{functions.\+cpp}!clear\+Screen@{clear\+Screen}}
+\index{clear\+Screen@{clear\+Screen}!functions.\+cpp@{functions.\+cpp}}
+\subsubsection[{\texorpdfstring{clear\+Screen(int height)}{clearScreen(int height)}}]{\setlength{\rightskip}{0pt plus 5cm}void clear\+Screen (
+\begin{DoxyParamCaption}
+\item[{int}]{height}
+\end{DoxyParamCaption}
+)}\hypertarget{functions_8cpp_a468976247bcb6ad0a54cbdc2b36c8aa9}{}\label{functions_8cpp_a468976247bcb6ad0a54cbdc2b36c8aa9}
+
+
+Clears the terminal screen by inserting multiple blank lines  int Height of the terminal window. 
+
+\index{functions.\+cpp@{functions.\+cpp}!decide\+Char@{decide\+Char}}
+\index{decide\+Char@{decide\+Char}!functions.\+cpp@{functions.\+cpp}}
+\subsubsection[{\texorpdfstring{decide\+Char(int $\ast$memoria, int columnass, int filas)}{decideChar(int *memoria, int columnass, int filas)}}]{\setlength{\rightskip}{0pt plus 5cm}int decide\+Char (
+\begin{DoxyParamCaption}
+\item[{int $\ast$}]{memoria, }
+\item[{int}]{columnass, }
+\item[{int}]{filas}
+\end{DoxyParamCaption}
+)}\hypertarget{functions_8cpp_a5ab57402418f37d00e251f8da96fec5a}{}\label{functions_8cpp_a5ab57402418f37d00e251f8da96fec5a}
+
+
+Decides the number of lines on which there is a character string in that column. 
+
+\index{functions.\+cpp@{functions.\+cpp}!get\+Term\+Cols@{get\+Term\+Cols}}
+\index{get\+Term\+Cols@{get\+Term\+Cols}!functions.\+cpp@{functions.\+cpp}}
+\subsubsection[{\texorpdfstring{get\+Term\+Cols()}{getTermCols()}}]{\setlength{\rightskip}{0pt plus 5cm}int get\+Term\+Cols (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{functions_8cpp_a6ce1d61c6d95f73d3b2fc7ce5a978e30}{}\label{functions_8cpp_a6ce1d61c6d95f73d3b2fc7ce5a978e30}
+
+
+Get the number of columns on the terminal from the system. 
+
+\index{functions.\+cpp@{functions.\+cpp}!get\+Term\+Rows@{get\+Term\+Rows}}
+\index{get\+Term\+Rows@{get\+Term\+Rows}!functions.\+cpp@{functions.\+cpp}}
+\subsubsection[{\texorpdfstring{get\+Term\+Rows()}{getTermRows()}}]{\setlength{\rightskip}{0pt plus 5cm}int get\+Term\+Rows (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{functions_8cpp_aaecafc32222150703f8ad603ae1a2fb9}{}\label{functions_8cpp_aaecafc32222150703f8ad603ae1a2fb9}
+
+
+Get the number of rows on the terminal from the system. 
+
+\index{functions.\+cpp@{functions.\+cpp}!move\+Screen@{move\+Screen}}
+\index{move\+Screen@{move\+Screen}!functions.\+cpp@{functions.\+cpp}}
+\subsubsection[{\texorpdfstring{move\+Screen()}{moveScreen()}}]{\setlength{\rightskip}{0pt plus 5cm}void move\+Screen (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{functions_8cpp_a4eecf11de94dce51fe8a38e03b894964}{}\label{functions_8cpp_a4eecf11de94dce51fe8a38e03b894964}
+
+
+Moves the terminal screen down by inserting a single line. 
+
+\index{functions.\+cpp@{functions.\+cpp}!print\+Screen@{print\+Screen}}
+\index{print\+Screen@{print\+Screen}!functions.\+cpp@{functions.\+cpp}}
+\subsubsection[{\texorpdfstring{print\+Screen(int line[], int size)}{printScreen(int line[], int size)}}]{\setlength{\rightskip}{0pt plus 5cm}void print\+Screen (
+\begin{DoxyParamCaption}
+\item[{int}]{line\mbox{[}$\,$\mbox{]}, }
+\item[{int}]{size}
+\end{DoxyParamCaption}
+)}\hypertarget{functions_8cpp_a386e08ffd1dd1a439a7bfda4e1991b71}{}\label{functions_8cpp_a386e08ffd1dd1a439a7bfda4e1991b71}
+
+
+Prints an array into the terminal window  int\mbox{[}\mbox{]} line The array to be printed  int size Sixe of the array to be printed. 
+
+\index{functions.\+cpp@{functions.\+cpp}!rand\+Int@{rand\+Int}}
+\index{rand\+Int@{rand\+Int}!functions.\+cpp@{functions.\+cpp}}
+\subsubsection[{\texorpdfstring{rand\+Int(int low, int high)}{randInt(int low, int high)}}]{\setlength{\rightskip}{0pt plus 5cm}int rand\+Int (
+\begin{DoxyParamCaption}
+\item[{int}]{low, }
+\item[{int}]{high}
+\end{DoxyParamCaption}
+)}\hypertarget{functions_8cpp_a19a21cc612f2ddca8fe94b0cfd154cfd}{}\label{functions_8cpp_a19a21cc612f2ddca8fe94b0cfd154cfd}
+
+
+Gets a random integer on a range  int low lower limit of the range  int high Upper limit of the range. 
+
+\index{functions.\+cpp@{functions.\+cpp}!wait@{wait}}
+\index{wait@{wait}!functions.\+cpp@{functions.\+cpp}}
+\subsubsection[{\texorpdfstring{wait(unsigned int time)}{wait(unsigned int time)}}]{\setlength{\rightskip}{0pt plus 5cm}void wait (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{time}
+\end{DoxyParamCaption}
+)}\hypertarget{functions_8cpp_ad289c3720fc10f3053b657f677d75a2d}{}\label{functions_8cpp_ad289c3720fc10f3053b657f677d75a2d}
+
+
+Makes the program \char`\"{}wait\char`\"{} for mircoseconds  int time Time to wait in microseconds. 
+
+
+
+\subsection{Variable Documentation}
+\index{functions.\+cpp@{functions.\+cpp}!height@{height}}
+\index{height@{height}!functions.\+cpp@{functions.\+cpp}}
+\subsubsection[{\texorpdfstring{height}{height}}]{\setlength{\rightskip}{0pt plus 5cm}int height\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{functions_8cpp_ad12fc34ce789bce6c8a05d8a17138534}{}\label{functions_8cpp_ad12fc34ce789bce6c8a05d8a17138534}
+\index{functions.\+cpp@{functions.\+cpp}!length@{length}}
+\index{length@{length}!functions.\+cpp@{functions.\+cpp}}
+\subsubsection[{\texorpdfstring{length}{length}}]{\setlength{\rightskip}{0pt plus 5cm}int length\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{functions_8cpp_a9f59b34b1f25fe00023291b678246bcc}{}\label{functions_8cpp_a9f59b34b1f25fe00023291b678246bcc}

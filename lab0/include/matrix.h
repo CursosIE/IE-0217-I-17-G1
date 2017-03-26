@@ -1,2 +1,2 @@
-extern int generator[];
-extern char visualLine[];
+extern int *generator[];
+extern char *visualLine[];

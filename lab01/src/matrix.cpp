@@ -8,44 +8,35 @@ using namespace std;
 
 int main()
 {
+  //hace que las letras sean verdes. no pude con el background negro
+  cout << "\033[30;32m\033[30\n";
   int columnass = getTermCols();
   srand( time( NULL ) );
   //es el que llama al decideChar
   int* memoria;
-  //Es una copia que no tiene limite de tamaño, almacena la iteraccion pasada
+  //Se utiliza para hacer una copia, almacena la iteraccion pasada
   int* memoria2;
   memoria2 = (int *)calloc(1000, sizeof(int));
+  //Se inicializa la pantalla
+  clearScreen(80);
+  //Se ejecuta hasta que sea eliminado
   while(1){
+      //Cada ciclo se renueva el tamaño de la terminal
       columnass = getTermCols();
+      //Se guarda memoria para los datos de las columnas en este instante
       memoria = (int *)calloc(columnass, sizeof(int));
+      //Se hace una copia de memoria2(esto para "actualizar"
       memcpy(memoria, memoria2, sizeof(int)*columnass);
+      //se determinan las filas que tiene la terminal -no lo veo muy util
       int filas = getTermRows();
-      //char* perro;
-      //perro = (char *)calloc(getTermCols(), sizeof(char))
-      //cout << "me cago";
+      //decide si va a haber o no un char en dada columna la siguiente iteracion
       decideChar(memoria, columnass, filas);
-      //cout << memoria[0];
-      for (int i = 0; i < columnass-3; i++) {
-        //cout << "perro " << memoria[i] << columnass << endl;
-        if (memoria[i] != 0) {
-          cout << (char)randInt(33, 126);
-          wait(9000);
-          memoria[i]=memoria[i]-1;
-        }
-        if (memoria[i] == 0 ) {
-          cout << " ";
-        }
-      }
+      //llama a la funcion de printeo, le envia memoria y columnass
+      printScreen(memoria, columnass);
+      //Se termina la linea
       moveScreen();
+      //Se hace una copia de memoria a memoria2
       memcpy(memoria2, memoria, sizeof(int)*columnass);
-      //imprime del 1 al 50 (prueba)
-      //for (int i=1; i<= 50; i++){
-  	    //cout <<	i;
-  	    //wait(100000); //velocidad bonita
-  	    //moveScreen();
-      //}
-      //setHeight(1);
-      //cout << getHeight();
     }
       return 0;
 }

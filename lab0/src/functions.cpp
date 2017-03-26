@@ -3,6 +3,7 @@
 #include <iostream>
 #include <unistd.h>
 #include "functions.h"
+#include <cstdlib>
 
 using namespace std;
 
@@ -19,7 +20,7 @@ void clearScreen(int height)
 
 void moveScreen()
 {
-    cout << endl;
+  cout << endl;
 }
 
 void printScreen(int line[],int size){
@@ -62,5 +63,10 @@ int randomWithSign()
   //min = -9
   //max = 9
     int randInt = rand() % 19 + (-9);
-    return randInt;
+    if (randInt > 0){
+	return randInt*3;
+    }
+    else if (randInt < 0){
+	return randInt*5;
+    }
 }
